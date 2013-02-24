@@ -165,20 +165,21 @@ $("#imageListOuthouse").on("mouseout  ", "li", function () {
 
 });
 	</script>
+    <a href="controlPanel.html">Control Panel</a><br>
     <table>
         <tr height = "400">
     <p>What color do you prefer for the <b>exterior</b> of the school buildings?</p>
-    <form name="myform" id="imageList" action="">
+    <form method="post" name="myform" id="imageList" action="schoolDesigner.html?r=1">
     {% csrf_token %}
         <ul id="imageList">
             <li id="sidebarList_1" data-img="imgDiv_1">White</li>
-            <input type="radio" name="ext" id="ext1">
+            <input type="radio" name="extw" id="ext1">
             <li id="sidebarList_2" data-img="imgDiv_2">Green</li>
-            <input type="radio" name="ext" id="ext2">
+            <input type="radio" name="extg" id="ext2">
             <li id="sidebarList_3" data-img="imgDiv_3">Red</li>
-            <input type="radio" name="ext" id="ext3">
+            <input type="radio" name="extr" id="ext3">
             <li id="sidebarList_4" data-img="imgDiv_4">Yellow</li>
-            <input type="radio" name="ext" id="ext4">
+            <input type="radio" name="exty" id="ext4">
         </ul>
         <div id="imgDiv_1">
             <img src="http://farm9.staticflickr.com/8336/8103069065_0381b123eb_m.jpg" alt="ViengKhamCommunityLearningCenter" width="304" height="228">
@@ -197,11 +198,11 @@ $("#imageListOuthouse").on("mouseout  ", "li", function () {
         <p>What color do you prefer for the <b>interior</b> of the school buildings?</p>
         <ul id="imageListInt">
             <li id="sidebarList_1_Int" data-img="imgDiv_1_Int">Blue</li>
-            <input type="radio" name="int" id="int1">
+            <input type="radio" name="intb" id="int1">
             <li id="sidebarList_2_Int" data-img="imgDiv_2_Int">Green</li>
-            <input type="radio" name="int" id="int2">
+            <input type="radio" name="intg" id="int2">
             <li id="sidebarList_3_Int" data-img="imgDiv_3_Int">Yellow</li>
-            <input type="radio" name="int" id="int3">
+            <input type="radio" name="inty" id="int3">
             </ul>
             <div id="imgDiv_1_Int">
                 <img src="http://farm9.staticflickr.com/8170/7985717536_e65fb96f58.jpg" width="304" height="228">
@@ -217,9 +218,9 @@ $("#imageListOuthouse").on("mouseout  ", "li", function () {
             <p>Which color <b>outhouse</b> do you prefer?</p>
             <ul id="imageListOuthouse">
                 <li id="sidebarList_1_Outhouse" data-img="imgDiv_1_Outhouse">Blue</li>
-                <input type="radio" name="out" id="out1">
+                <input type="radio" name="outhouseb" id="out1">
                 <li id="sidebarList_2_Outhouse" data-img="imgDiv_2_Outhouse">White</li>
-                <input type="radio" name="out" id="out2">
+                <input type="radio" name="outhousew" id="out2">
             </ul>
             <div id="imgDiv_1_Outhouse">
                 <img src="http://farm9.staticflickr.com/8314/8003544861_0f69bafedb.jpg" width="304" height="228">

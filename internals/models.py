@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class School(models.Model):
-    name = models.CharField(max_length=50)
     ext_color = models.CharField(max_length=1, choices = [('w','white'),('g','green'),('y','yellow'),('r','red')])
     int_color = models.CharField(max_length=1, choices = [('b','blue'),('g','green'),('y','yellow')])
     outhouse_color = models.CharField(max_length=1, choices = [('b','blue'),('w','white')])
@@ -11,13 +10,13 @@ class School(models.Model):
 class FundraisingGroup(models.Model):
     group_name = models.CharField(max_length=50)
     fundraiser_name = models.CharField(max_length=50)
-    school = models.ForeignKey(School)
+    school = models.ForeignKey(School,null=True)
     
     #fcid
-    description = models.TextField()
+    description = models.TextField(default='')
     group_code = models.CharField(max_length=50)
     current = models.IntegerField(default=0)
-    goal = models.IntegerField()
+    goal = models.IntegerField(default=25000)
     num_donations = models.IntegerField(default=0)
     
 class UserProfile(models.Model):

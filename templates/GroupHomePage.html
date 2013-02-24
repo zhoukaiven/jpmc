@@ -13,15 +13,16 @@
 </head>
 	<body>
     {% if user.is_authenticated %}
-        <a href="controlPanel.html">Control Panel</a><br>
-        <a href="logout.html">Log Out</a>
+        <p style="text-align: right;"><a href="logout.html">Log Out</a></p>
+        <a href="controlPanel.html">Control Panel</a>
     {% else %}
         <a href="login.html">Login</a>
     {% endif %}
-		<p class="header">The Mount Kilamanjaro School</p>
+		<p class="header">The Mount Kilimanjaro School</p>
 		<!--<p class="photos"><button id="multimedia"> Photos and Videos</button></p>-->
 		<p class="videos" id="specific_display"></p>
 		<p class="stats">Statistics</p>
+        
 		<p class="donate">Donate</p>
 		<a href="http://fundraise.pencilsofpromise.org/charity/charity?cid=5417"><img src="static/img/child.jpg" alt="child" class="child"></a>
 		<img src="static/img/house2.jpg" alt="house" class="house">
@@ -29,6 +30,7 @@
 		<img src="static/img/white.jpg" alt="flower" class="white"> -->
 		<img src="static/img/gray.jpg" alt="flower" class="gray"> 
 		<img src="static/img/turqoise.jpg" alt="flower" class="turqoise"> 
+        <div style="text-align: center; color:white; font-size : x-large">Donation Total: ${{current}} out of ${{goal}}</div>
 		<div></div>
 	</body>
 </html>
