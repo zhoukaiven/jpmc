@@ -6,7 +6,7 @@ import internals.views
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    #url(r'^register\.html$', internals.views.register, name='register'),
+    url(r'^register\.html$', internals.views.register, name='register'),
     url(r'^login\.html$', internals.views.login, name='login'),
     url(r'^index\.html$|^$', internals.views.index, name='index'),
     url(r'^logout\.html$|^$', internals.views.logout, name='logout')
