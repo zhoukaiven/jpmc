@@ -5,7 +5,12 @@
 
 </head>
 	<body>
+    {% if user.is_authenticated %}
+        <a href="controlPanel.html">Control Panel</a>
+        <a href="logout.html">Log Out</a>
+    {% else %}
         <a href="login.html">Login</a>
+    {% endif %}
 		<p class="header">The Mount Kilamanjaro School</p>
 		<p class="photos">Photos</p>
 		<p class="videos">Videos</p>

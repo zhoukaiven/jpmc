@@ -17,7 +17,7 @@ def login(request):
 
         #Check if already logged in
         if request.user.is_authenticated():
-                redirect('index.html')
+                redirect('controlpanel.html')
         if 'username' not in request.POST:
                 return render(request, 'login.html', context)
 
@@ -28,7 +28,7 @@ def login(request):
         if user is not None:
                 auth_login(request, user)
                 context['user'] = user
-                return render(request, 'index.html', context)
+                return render(request, 'controlpanel.html', context)
         else:
                 context['loginMessage'] = "Invalid user/password combination!"
                 return render(request, 'login.html', context) #should be control_panel.html
@@ -42,10 +42,13 @@ def logout(request):
 def index(request):
 	context = {'pageType': 0, 'loginMessage': "none", 'user': request.user}
 	if request.user.is_authenticated():
-		return render(request, 'index.html', context) 
+		return render(request, 'controlpanel.html', context) 
 	else:
 		#return render(request, 'indexlo.html', context)
                 return render(request, 'GroupHomePage.html', context)
+
+def group_home_page(request):
+        return render(request, 'GroupHomePage.html')
 
 #Registration page, needs to be changed
 def register(request):
@@ -77,7 +80,7 @@ def register(request):
 			return render(request, 'register.html', context)		
 	else:
 		if request.user.is_authenticated():
-			return render(request, 'index.html', context)
+			return render(request, 'controlpanel.html', context)
 		else:
 			return render(request, 'register.html', context)
 
