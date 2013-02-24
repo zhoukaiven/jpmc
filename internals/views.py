@@ -12,26 +12,26 @@ from internals.models import *
 
 #Called when user logs in
 def login(request):
-	#Context
-	context = {'pageType': 0, 'loginMessage': "none", 'user': request.user}
-	
-	#Check if already logged in
-	if request.user.is_authenticated():
-		redirect('index.html')
-	if 'username' not in request.POST:
-		return render(request, 'indexlo.html', context)
-	
-	#Authenticate user
-	username = request.POST['username']
-	password = request.POST['password']
-	user = authenticate(username=username, password=password)
-	if user is not None:
-		auth_login(request, user)
-		context['user'] = user
-		redirect('index.html')
-	else:
-		context['loginMessage'] = "Invalid password!"
-		return render(request, 'indexlo.html', context)
+        #Context
+        context = {'pageType': 0, 'loginMessage': "none", 'user': request.user}
+
+        #Check if already logged in
+        if request.user.is_authenticated():
+                redirect('index.html')
+        if 'username' not in request.POST:
+                return render(request, 'indexlo.html', context)
+
+        #Authenticate user
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+                auth_login(request, user)
+                context['user'] = user
+                return render(request, 'index.html', context)
+        else:
+                context['loginMessage'] = "Invalid password!"
+                return render(request, 'indexlo.html', context)
     
 #Called when user logs out
 def logout(request):
