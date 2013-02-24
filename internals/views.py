@@ -150,6 +150,9 @@ def school_designer(request):
                         return render(request, 'schoolDesigner.html',context)
                 else:
                         return render(request, 'login.html', context)
+
+
+
 """
 def school_designer_update(request)
 """
@@ -157,4 +160,7 @@ def multimedia(request):
         context = {'pageType': 0, 'loginMessage': "none", 'user': request.user}
 	return render(request, 'multimedia.html',context)
 
+def edit_about(request):
+        context = {'pageType': 0, 'loginMessage': "none", 'user': request.user}
+	return render(request, 'editAbout.html',context)
         
