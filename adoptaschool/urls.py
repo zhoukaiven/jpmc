@@ -17,7 +17,12 @@ urlpatterns = patterns('',
     url(r'^index\.html$|^$', internals.views.index, name='index'),
     url(r'^test\.html$', internals.views.test, name='test'),
     url(r'^logout\.html$|^$', internals.views.logout, name='logout'),
-    url(dajaxice_config.dajaxice_url, include('dajaxice.urls'))
+    url(r'^multimedia\.html$|^$', internals.views.multimedia, name='multimedia'),
+    url(dajaxice_config.dajaxice_url, include('dajaxice.urls')),
+    url(r'^logout\.html$|^$', internals.views.logout, name='logout'),
+    url(r'^schoolDesigner\.html$|^$', internals.views.school_designer, name='school_designer'),
+    url(r'^controlPanel\.html$|^$', internals.views.control_panel, name='control_panel'),
+    url(r'^groupHomePage\.html$|^$', internals.views.group_home_page, name='groupHomePage'),                   
     # Examples:
     # url(r'^$', 'adoptaschool.views.home', name='home'),
     # url(r'^adoptaschool/', include('adoptaschool.foo.urls')),

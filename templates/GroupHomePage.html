@@ -1,14 +1,26 @@
 <html>
 <head>
 <title>Mount Kilamanjaro School</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="static/css/my.css">
+<script>
+	$("#multimedia").click(function(){
+	// load multimedia section on click
+		$('#specific_display').load("multimedia.html");
+	});
+</script>
 
 </head>
 	<body>
+    {% if user.is_authenticated %}
+        <a href="controlPanel.html">Control Panel</a><br>
+        <a href="logout.html">Log Out</a>
+    {% else %}
         <a href="login.html">Login</a>
+    {% endif %}
 		<p class="header">The Mount Kilamanjaro School</p>
-		<p class="photos">Photos</p>
-		<p class="videos">Videos</p>
+		<p class="photos"><button id="multimedia"> Photos and Videos</button></p>
+		<p class="videos" id="specific_display"></p>
 		<p class="stats">Statistics</p>
 		<p class="donate">Donate</p>
 		<img src="static/img/child.jpg" alt="child" class="child">
@@ -17,5 +29,6 @@
 		<img src="static/img/white.jpg" alt="flower" class="white"> 
 		<img src="static/img/gray.jpg" alt="flower" class="gray"> 
 		<img src="static/img/turqoise.jpg" alt="flower" class="turqoise"> 
+		<div></div>
 	</body>
 </html>

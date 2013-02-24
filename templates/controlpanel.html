@@ -1,0 +1,46 @@
+<html xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<meta name="description" content="Testing some jsfiddle stuff from PencilsOfPromise">
+<title>Mount Kilamanjaro School</title>
+<link rel="stylesheet" type="text/css" href="static/css/panel.css">
+
+</head>
+	<body>
+        <a href="groupHomePage.html">Fundraiser Page</a>
+		<p class="header">5th Grade Soccer Moms</p>
+		<p class="photos">Design School</p>
+		<p class="videos">Contact PoP</p>
+		<p class="stats">Plan</p>
+		<p class="donate"></p>
+		<img src="static/img/kid.jpg" alt="child" class="child">
+		<img src="static/img/soccer.jpg" alt="house" class="house">
+		<a href="schoolDesigner.html"><img src="static/img/school.jpg" alt="town" class="town"></a>
+		<img src="static/img/white.jpg" alt="flower" class="white"> 
+		<img src="static/img/gray.jpg" alt="flower" class="gray"> 
+		<img src="static/img/orange.jpg" alt="flower" class="turqoise"> 
+		<img src="static/img/purple.jpg" alt="purple" class="purple">
+
+		<div id="fb-root"></div>
+        <script>
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=145797328914787";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <fb:share-button type="box_count"></fb:share-button>
+
+        <a href="http://twitter.com/share" 
+   data-url="http://ec2-54-234-129-31.compute-1.amazonaws.com:8000" 
+   class="twitter-share-button" 
+   data-text="I just donated to @PencilsOfPromis! Join me in helping build a school." 
+   data-count="horizontal">
+Tweet
+</a>
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
+	</body>
+</html>

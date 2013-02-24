@@ -14,15 +14,18 @@ from internals.models import *
 def test(request):
         return render_to_response('test.html')
 
+def multimedia(request):
+        return render_to_response('multimedia.html')
+
 def login(request):
         #Context
         context = {'pageType': 0, 'loginMessage': "none", 'user': request.user}
 
         #Check if already logged in
         if request.user.is_authenticated():
-                redirect('index.html')
+                redirect('controlpanel.html')
         if 'username' not in request.POST:
-                return render(request, 'indexlo.html', context)
+                return render(request, 'login.html', context)
 
         #Authenticate user
         username = request.POST['username']
@@ -31,10 +34,10 @@ def login(request):
         if user is not None:
                 auth_login(request, user)
                 context['user'] = user
-                return render(request, 'index.html', context)
+                return render(request, 'controlpanel.html', context)
         else:
-                context['loginMessage'] = "Invalid password!"
-                return render(request, 'indexlo.html', context)
+                context['loginMessage'] = "Invalid user/password combination!"
+                return render(request, 'login.html', context) #should be control_panel.html
     
 #Called when user logs out
 def logout(request):
@@ -45,10 +48,13 @@ def logout(request):
 def index(request):
 	context = {'pageType': 0, 'loginMessage': "none", 'user': request.user}
 	if request.user.is_authenticated():
-		return render(request, 'index.html', context) 
+		return render(request, 'controlpanel.html', context) 
 	else:
 		#return render(request, 'indexlo.html', context)
                 return render(request, 'GroupHomePage.html', context)
+
+def group_home_page(request):
+        return render(request, 'GroupHomePage.html')
 
 #Registration page, needs to be changed
 def register(request):
@@ -74,27 +80,32 @@ def register(request):
 		
 		if user is not None:
 			context['loginMessage'] = "Registration Successful!"
-			return render(request, 'indexlo.html', context)
+			return render(request, 'login.html', context)
 		else:
 			context['loginMessage'] = "Registration Failed!"
 			return render(request, 'register.html', context)		
 	else:
 		if request.user.is_authenticated():
-			return render(request, 'index.html', context)
+			return render(request, 'controlpanel.html', context)
 		else:
 			return render(request, 'register.html', context)
-"""
-def control_panel(request):
-        if request.user.is_authenticated():
-		return render(request, 'schoolDesigner.html', context)
-	else:
-		return render(request, 'indexlo.html', context)
 
-def update_control_panel(request):
-        
-def school_designer(request):
+def control_panel(request):
+        context = {'pageType': 0, 'loginMessage': "none", 'user': request.user}
         if request.user.is_authenticated():
-		return render(request, 'schoolDesigner.html', context)
+		return render(request, 'controlpanel.html', context)
 	else:
-		return render(request, 'indexlo.html', context)
-"""     
+		return render(request, 'login.html', context)
+"""
+def update_control_panel(request):
+"""         
+def school_designer(request):
+        context = {'pageType': 0, 'loginMessage': "none", 'user': request.user}
+        if request.user.is_authenticated():
+		return render(request, 'schoolDesigner.html',context)
+	else:
+		return render(request, 'login.html', context)
+"""
+def school_designer_update(request)
+"""
+   

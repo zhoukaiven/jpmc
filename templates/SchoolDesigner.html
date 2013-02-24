@@ -1,0 +1,236 @@
+<html>
+<head>
+    <title>
+        <p>Preferences for School Appearance</p>
+    </title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+	<style media="screen" type="text/css">
+
+#imgDiv_1 {
+    display: inline;
+}
+#imgDiv_2 {
+    display: none;
+}
+#imgDiv_3 {
+    display: none;
+}
+#imgDiv_4 {
+    display: none;
+}
+#imageList li {
+    display: inline;
+}
+#imgDiv_1_Int {
+    display: inline;
+}
+#imgDiv_2_Int {
+    display: none;
+}
+#imgDiv_3_Int {
+    display: none;
+}
+#imageListInt li {
+    display: inline;
+}
+#imgDiv_1_Outhouse {
+    display: inline;
+}
+#imgDiv_2_Outhouse {
+    display: none;
+}
+#imageListOuthouse li {
+    display: inline;
+}
+
+</style>
+</head>
+<body>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+
+	<script type="text/javascript">//some javascipt here
+	//The following is js for exterior stuff
+$(window).load(function(){
+var $selected = $("#imgDiv_1");
+
+function clear() {
+    $("#imgDiv_2").css("display", "none");
+    $("#imgDiv_3").css("display", "none");
+    $("#imgDiv_4").css("display", "none");
+    $("#imgDiv_1").css("display", "none");
+}
+
+$("[id=ext1]").change(function () {
+    clear();
+    $selected = $("#imgDiv_1");
+    $("#imgDiv_1").css("display", "inline");
+});
+
+$("[id=ext2]").change(function () {
+    clear();
+    $selected = $("#imgDiv_2");
+    $("#imgDiv_2").css("display", "inline");
+});
+$("[id=ext3]").change(function () {
+    clear();
+    $selected = $("#imgDiv_3");
+    $("#imgDiv_3").css("display", "inline");
+});
+$("[id=ext4]").change(function () {
+    clear();
+    $selected = $("#imgDiv_4");
+    $("#imgDiv_4").css("display", "inline");
+});
+
+$("#imageList").on("mouseover  ", "li", function () {
+
+    clear();
+    $("#" + $(this).data("img")).css("display", "inline");
+
+});
+
+$("#imageList").on("mouseout  ", "li", function () {
+    clear();
+    $($selected).css("display", "inline");
+});
+
+//The following is for interior stuff
+
+var $selectedint = $("#imgDiv_1_Int");
+
+function clear_Int() {
+    $("#imgDiv_1_Int").css("display", "none");
+    $("#imgDiv_2_Int").css("display", "none");
+    $("#imgDiv_3_Int").css("display", "none");
+}
+
+$("[id=int1]").change(function () {
+    clear_Int();
+    $selectedint = $("#imgDiv_1_Int");
+    $("#imgDiv_1_Int").css("display", "inline");
+});
+
+$("[id=int2]").change(function () {
+    clear_Int();
+    $selectedint = $("#imgDiv_2_Int");
+    $("#imgDiv_2_Int").css("display", "inline");
+});
+$("[id=int3]").change(function () {
+    clear_Int();
+    $selectedint = $("#imgDiv_3_Int");
+    $("#imgDiv_3_Int").css("display", "inline");
+});
+
+$("#imageListInt").on("mouseover  ", "li", function () {
+    clear_Int();
+    $("#" + $(this).data("img")).css("display", "inline");
+});
+
+$("#imageListInt").on("mouseout  ", "li", function () {
+    clear_Int();
+    $($selectedint).css("display", "inline");
+});
+
+//The following is for outhouse stuff
+
+var $selectedout = $("#imgDiv_1_Outhouse");
+
+function clear_Out() {
+    $("#imgDiv_1_Outhouse").css("display", "none");
+    $("#imgDiv_2_Outhouse").css("display", "none");
+}
+
+$("[id=out1]").change(function () {
+    clear_Out();
+    $selectedout = $("#imgDiv_1_Outhouse");
+    $("#imgDiv_1_Outhouse").css("display", "inline");
+});
+
+$("[id=out2]").change(function () {
+    clear_Out();
+    $selectedout = $("#imgDiv_2_Outhouse");
+    $("#imgDiv_2_Outhouse").css("display", "inline");
+});
+
+$("#imageListOuthouse").on("mouseover  ", "li", function () {
+    clear_Out();
+    $("#" + $(this).data("img")).css("display", "inline");
+    //$selectedout = $("#" + $(this).data("img"));
+});
+
+$("#imageListOuthouse").on("mouseout  ", "li", function () {
+    clear_Out();
+    $($selectedout).css("display", "inline");
+});
+
+});
+	</script>
+    <table>
+        <tr height = "400">
+    <p>What color do you prefer for the <b>exterior</b> of the school buildings?</p>
+    <!-- <form name="myform" id="imageList" action=""> -->
+        <ul id="imageList">
+            <li id="sidebarList_1" data-img="imgDiv_1">White</li>
+            <input type="radio" name="ext" id="ext1">
+            <li id="sidebarList_2" data-img="imgDiv_2">Green</li>
+            <input type="radio" name="ext" id="ext2">
+            <li id="sidebarList_3" data-img="imgDiv_3">Red</li>
+            <input type="radio" name="ext" id="ext3">
+            <li id="sidebarList_4" data-img="imgDiv_4">Yellow</li>
+            <input type="radio" name="ext" id="ext4">
+        </ul>
+        <div id="imgDiv_1">
+            <img src="http://farm9.staticflickr.com/8336/8103069065_0381b123eb_m.jpg" alt="ViengKhamCommunityLearningCenter" width="304" height="228">
+        </div>
+        <div id="imgDiv_2">
+            <img src="http://farm9.staticflickr.com/8518/8486482582_c39126bfe0_n.jpg" alt="Pulpit rock" width="304" height="228">
+        </div>
+        <div id="imgDiv_3">
+            <img src="http://farm9.staticflickr.com/8480/8224026575_4ec462e901.jpg" alt="Pulpit rock" width="304" height="228">
+        </div>
+        <div id="imgDiv_4">
+            <img src="http://farm9.staticflickr.com/8058/8251808691_2a56e5427b.jpg" alt="Lacal Tzucubal" width="304" height="228">
+        </div>
+            </tr>
+      <tr height ="400">
+        <p>What color do you prefer for the <b>interior</b> of the school buildings?</p>
+        <ul id="imageListInt">
+            <li id="sidebarList_1_Int" data-img="imgDiv_1_Int">Blue</li>
+            <input type="radio" name="int" id="int1">
+            <li id="sidebarList_2_Int" data-img="imgDiv_2_Int">Green</li>
+            <input type="radio" name="int" id="int2">
+            <li id="sidebarList_3_Int" data-img="imgDiv_3_Int">Yellow</li>
+            <input type="radio" name="int" id="int3">
+            </ul>
+            <div id="imgDiv_1_Int">
+                <img src="http://farm9.staticflickr.com/8170/7985717536_e65fb96f58.jpg" width="304" height="228">
+            </div>
+            <div id="imgDiv_2_Int">
+                <img src="http://farm9.staticflickr.com/8495/8294494081_b72eb3b427.jpg" width="304" height="228">
+            </div>
+            <div id="imgDiv_3_Int">
+                <img src="http://farm9.staticflickr.com/8176/7983125431_7c135bb58a.jpg" width="304" height="228">
+            </div>
+                </tr>
+         <tr height = "400" >
+            <p>Which color <b>outhouse</b> do you prefer?</p>
+            <ul id="imageListOuthouse">
+                <li id="sidebarList_1_Outhouse" data-img="imgDiv_1_Outhouse">Blue</li>
+                <input type="radio" name="out" id="out1">
+                <li id="sidebarList_2_Outhouse" data-img="imgDiv_2_Outhouse">White</li>
+                <input type="radio" name="out" id="out2">
+            </ul>
+            <div id="imgDiv_1_Outhouse">
+                <img src="http://farm9.staticflickr.com/8314/8003544861_0f69bafedb.jpg" width="304" height="228">
+            </div>
+            <div id="imgDiv_2_Outhouse">
+                <img src="http://farm9.staticflickr.com/8330/8445507772_75083ba547.jpg" width="304" height="228">
+            </div>
+                <p>
+            <input type="submit" value="Submit">
+                    </p>
+            </form>
+                </tr>
+				</table>
+				</body>
+		</html>
