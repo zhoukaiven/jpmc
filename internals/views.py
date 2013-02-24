@@ -11,6 +11,9 @@ from django.shortcuts import redirect
 from internals.models import *
 
 #Called when user logs in
+def test(request):
+        return render_to_response('test.html')
+
 def login(request):
         #Context
         context = {'pageType': 0, 'loginMessage': "none", 'user': request.user}
