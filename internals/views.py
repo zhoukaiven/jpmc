@@ -163,4 +163,7 @@ def multimedia(request):
 def edit_about(request):
         context = {'pageType': 0, 'loginMessage': "none", 'user': request.user}
 	return render(request, 'editAbout.html',context)
-        
+
+def about(request):
+        context = {'pageType': 0, 'loginMessage': "none", 'user': request.user}
+	return render(request, 'about.html',context)

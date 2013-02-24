@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^groupHomePage\.html$|^$', internals.views.group_home_page, name='groupHomePage'),
     url(r'^multimedia\.html$|^$', internals.views.multimedia, name='multimedia'),
     url(r'^editAbout\.html$|^$', internals.views.edit_about, name='edit_about'),
+    url(r'^about\.html$|^$', internals.views.about, name='about'),
     # Examples:
     # url(r'^$', 'adoptaschool.views.home', name='home'),
     # url(r'^adoptaschool/', include('adoptaschool.foo.urls')),
