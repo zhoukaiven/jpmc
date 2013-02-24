@@ -12,7 +12,7 @@ import internals.views
 dajaxice_autodiscover()
 
 urlpatterns = patterns('',
-    #url(r'^register\.html$', internals.views.register, name='register'),
+    url(r'^register\.html$', internals.views.register, name='register'),
     url(r'^login\.html$', internals.views.login, name='login'),
     url(r'^index\.html$|^$', internals.views.index, name='index'),
     url(r'^test\.html$', internals.views.test, name='test'),
