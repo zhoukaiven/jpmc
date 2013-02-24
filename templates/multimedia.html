@@ -6,8 +6,31 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script type="text/javascript" src="static/js/coin-slider.js"></script>
-
 	<link rel="stylesheet" href="static/css/coin-slider-styles.css" type="text/css" />
+	<script>
+		/*	READ THESE COMMENTS CAREFULLY, THEY EXPLAIN THE THOUGHT PROCESS BEHIND THIS CODE.
+			Basically, I've implemented a third-party jQuery extension (free to use under MIT license) that displays images very nicely. There's a sample for you to peruse below.
+			However, we want to show pictures stored in the backend instead of the default ones I hard-coded in, obviously. Hence, I use an AJAX request that will fetch the html for the necessary elements needed for the coin-slider. You have to write the AJAX server response, since I have no idea what's going on in the backend: see http://www.w3schools.com/ajax/ajax_database.asp for some potential guidance. 
+
+			There is a div added to the GroupHomePage html page. Ideally, when you click on certain links/text in the page, the div will load one of several options without refreshing the page:
+			magic of jQuery. (Unfortunately, clicking on the photos and videos page will not load this page into the div right now, you can do it manually though by modifying the jQuery to onload, rather than click, to see my intention though.) This makes the page extremely dynamic and minimizes the amount of html we have to write.
+
+			I'm going to go collapse now, but good luck with everything. Sorry I couldn't contribute more.*/
+
+		$(document).ready(function(groupname){
+		var xmlhttp;
+		xmlhttp=new XMLHttpRequest();
+		xmlhttp.onreadystatechange=function()
+		  {
+		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		    {
+		    $("slider").innerHTML=xmlhttp.responseText;
+		    }
+		  }
+		xmlhttp.open("GET","getgrouppics.asp?q="+groupname,true);
+		xmlhttp.send();
+		}
+	</script>
 
 
 	<title>The School Gallery and Videos</title>
