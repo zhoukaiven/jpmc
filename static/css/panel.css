@@ -1,0 +1,134 @@
+body{
+	background-image: url(/static/img/deer.jpg);
+	background-size:1400px 650px;
+}
+
+img.child{
+	position: fixed;
+	width:  210px;
+	height: 165px;
+	left: 915px;
+	top: 308px;
+}
+
+img.house{
+	position: fixed;
+	width:  220px;
+	height: 196px;
+	left: 675px;
+	top: 150px;
+}
+
+img.town{
+	position: fixed;
+	width:  220px;
+	height: 175px;
+	top: 290px;
+	left: 155px;
+}
+
+img.purple{
+	position: fixed;
+	width: 220px;
+	height: 140px;
+	left: 905px;
+	top: 150px;
+}
+
+img.flower{
+	position: fixed;
+	width: 300px;
+	height: 300px;
+	left: 100px;
+	top: 250px;
+}
+
+img.white{
+	position: fixed;
+	top: 365px;
+	left: 675px;
+	height: 100px;
+	width: 222px;
+}
+
+img.turqoise{
+	position: fixed;
+	top: 290px;
+	width: 275px;
+	height:	175px;
+	left: 385px;
+}
+
+img.gray{
+	position: fixed;
+	top: 150px;
+	left: 155px;
+	height:120px;
+	width: 510px;
+}
+
+p.header{
+	position: fixed;
+	top: 200px;
+	left: 345px;
+	text-shadow: 1px 1px 1px black;
+	font-size: 29px;
+	font-family:Arial,Helvetica,sans-serif;
+	color:white;
+	z-index: 100;
+}
+
+p.photos{
+	position: fixed;
+	top: 280px;
+	left: 180px;
+	text-shadow: 1px 1px 1px black;
+	font-size: 20px;
+	font-family:Arial,Helvetica,sans-serif;
+	color:white;
+	z-index: 100;
+}
+
+p.videos{
+	position: fixed;
+	top: 400px;
+	left: 500px;
+	text-shadow: .8px .8px .8px black;
+	font-size: 20px;
+	font-family:Arial,Helvetica,sans-serif;
+	color: 	black;
+	z-index: 100;
+}
+
+p.stats{
+	position: fixed;
+	top: 240px;
+	left: 920px;
+	text-shadow: .5px .5px .5px black;
+	font-size: 20px;
+	font-family:Arial,Helvetica,sans-serif;
+	color: 	black;
+	z-index: 100;
+}
+
+p.login{
+	position: fixed;
+	top: 250px;
+	left: 880px;
+	text-shadow: 1px 1px 1px black;
+	font-size: 18px;
+	font-family:Arial,Helvetica,sans-serif;
+	color: 	white;
+	z-index: 100;
+}
+
+p.donate{
+	position: fixed;
+	top: 410px;
+	left: 920px;
+	text-shadow: 1px 1px 1px black;
+	font-size: 18px;
+	font-family:Arial,Helvetica,sans-serif;
+	color: 	white;
+	z-index: 100;
+}

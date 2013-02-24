@@ -80,13 +80,14 @@ def register(request):
 			return render(request, 'index.html', context)
 		else:
 			return render(request, 'register.html', context)
-"""
-def control_panel(request):
-        if request.user.is_authenticated():
-		return render(request, 'schoolDesigner.html', context)
-	else:
-		return render(request, 'indexlo.html', context)
 
+def control_panel(request):
+        context = {'pageType': 0, 'loginMessage': "none", 'user': request.user}
+        if request.user.is_authenticated():
+		return render(request, 'controlpanel.html', context)
+	else:
+		return render(request, 'login.html', context)
+"""
 def update_control_panel(request):
 """         
 def school_designer(request):
