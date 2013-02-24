@@ -19,7 +19,7 @@ def login(request):
         if request.user.is_authenticated():
                 redirect('index.html')
         if 'username' not in request.POST:
-                return render(request, 'indexlo.html', context)
+                return render(request, 'login.html', context)
 
         #Authenticate user
         username = request.POST['username']
@@ -30,8 +30,8 @@ def login(request):
                 context['user'] = user
                 return render(request, 'index.html', context)
         else:
-                context['loginMessage'] = "Invalid password!"
-                return render(request, 'indexlo.html', context)
+                context['loginMessage'] = "Invalid user/password combination!"
+                return render(request, 'login.html', context) #should be control_panel.html
     
 #Called when user logs out
 def logout(request):
@@ -71,7 +71,7 @@ def register(request):
 		
 		if user is not None:
 			context['loginMessage'] = "Registration Successful!"
-			return render(request, 'indexlo.html', context)
+			return render(request, 'login.html', context)
 		else:
 			context['loginMessage'] = "Registration Failed!"
 			return render(request, 'register.html', context)		
@@ -88,10 +88,14 @@ def control_panel(request):
 		return render(request, 'indexlo.html', context)
 
 def update_control_panel(request):
-        
+"""         
 def school_designer(request):
+        context = {'pageType': 0, 'loginMessage': "none", 'user': request.user}
         if request.user.is_authenticated():
-		return render(request, 'schoolDesigner.html', context)
+		return render(request, 'schoolDesigner.html',context)
 	else:
-		return render(request, 'indexlo.html', context)
-"""     
+		return render(request, 'login.html', context)
+"""
+def school_designer_update(request)
+"""
+   
