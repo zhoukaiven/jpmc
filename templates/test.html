@@ -1,0 +1,12 @@
+{% load dajaxice_templatetags %}
+<head>
+ {% dajaxice_js_import 'nocsrf'%}
+	<script>
+function my_js_callback(data){
+    alert(data.message);
+}
+</script>
+</head>
+<html><body>
+<input type="button" onclick="Dajaxice.internals.sayhello(my_js_callback);" value="Click Here!"></button>
+</body></html>
