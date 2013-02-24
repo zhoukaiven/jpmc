@@ -11,12 +11,6 @@ from django.shortcuts import redirect
 from internals.models import *
 
 #Called when user logs in
-def test(request):
-        return render_to_response('test.html')
-
-def multimedia(request):
-        return render_to_response('multimedia.html')
-
 def login(request):
         #Context
         context = {'pageType': 0, 'loginMessage': "none", 'user': request.user}
@@ -61,22 +55,31 @@ def register(request):
 	context = {'pageType': 0, 'loginMessage': "none", 'user': request.user}
 	if 'r' in request.GET and request.GET['r'] == "1":
 		username = request.POST['username']
+		group_code = request.POST['group']
 		password = request.POST['password']
 		confpassword = request.POST['confpassword']
 		if not username or not password:
 			context['loginMessage'] = "Please enter both username and password"
 			return render(request, 'register.html', context)
+                elif not group_code:
+                        context['loginMessage'] = "Please enter the group code"
+                        return render(request, 'register.html', context)
 		elif password != confpassword:
 			context['loginMessage'] = "Please make sure confirm is same as password"
 			return render(request, 'register.html', context)
 		
-		if User.objects.get(username = username):
+		if User.objects.filter(username = username):
                         context['loginMessage'] = "Username taken"
 			return render(request, 'register.html', context)
 		else:
-                        user = User.objects.create_user(username=username, email=None, password=password)
-                        userProfile = UserProfile(user = user, num_meals = 0, auth_user_id = user.id) 
-                        userProfile.save()
+                        try:
+                                group = FundraisingGroup.objects.filter(group_code = group_code)
+                                user = User.objects.create_user(username=username, email=None, password=password)
+                                userProfile = UserProfile(user = user, group = group) 
+                                userProfile.save()
+                        except:
+                                context['loginMessage'] = "Invalid Group Code."
+                                return render(request, 'register.html', context)
 		
 		if user is not None:
 			context['loginMessage'] = "Registration Successful!"
@@ -108,4 +111,8 @@ def school_designer(request):
 """
 def school_designer_update(request)
 """
-   
+def multimedia(request):
+        context = {'pageType': 0, 'loginMessage': "none", 'user': request.user}
+	return render(request, 'multimedia.html',context)
+
+        

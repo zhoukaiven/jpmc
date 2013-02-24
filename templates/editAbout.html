@@ -1,0 +1,16 @@
+<div class="row-fluid"><div class="span12" style="height:90px"></div></div>
+<div class="row-fluid">
+	<div class="span8 offset2 well well-large">
+		<form method="post" action="">
+		{% csrf_token %}
+			<fieldset>
+				<p style="text-align:center;font-size:30px">Submit a blurb explaining your mission statement.</p>
+                <textarea name="editAbout" rows="10" cols="75"></textarea>
+				<p style="text-align:center;">
+				<input class="btn btn-success" type="submit" value="Submit statement"/>
+				</p>
+			</fieldset>
+		</form>
+	</div>
+</div>
+<div class="row-fluid"><div class="span12" style="height:60px"></div></div>

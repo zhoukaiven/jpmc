@@ -15,7 +15,7 @@ class FundraisingGroup(models.Model):
     
     #fcid
     description = models.TextField()
-    
+    group_code = models.CharField(max_length=50)
     current = models.IntegerField(default=0)
     goal = models.IntegerField()
     num_donations = models.IntegerField(default=0)

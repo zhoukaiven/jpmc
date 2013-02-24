@@ -168,7 +168,8 @@ $("#imageListOuthouse").on("mouseout  ", "li", function () {
     <table>
         <tr height = "400">
     <p>What color do you prefer for the <b>exterior</b> of the school buildings?</p>
-    <!-- <form name="myform" id="imageList" action=""> -->
+    <form name="myform" id="imageList" action="">
+    {% csrf_token %}
         <ul id="imageList">
             <li id="sidebarList_1" data-img="imgDiv_1">White</li>
             <input type="radio" name="ext" id="ext1">
